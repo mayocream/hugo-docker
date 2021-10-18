@@ -27,3 +27,11 @@ jobs:
           tags: mayocream/hugo:latest
           file: Dockerfile
           context: hugo
+          
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: mayocream/hugo
+
