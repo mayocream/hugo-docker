@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push (main)
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           tags: mayocream/hugo:latest
@@ -29,7 +29,7 @@ jobs:
           context: hugo
           
       - name: Build and push (ci)
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
           tags: mayocream/hugo:ci
